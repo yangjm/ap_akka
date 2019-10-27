@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.aggrepoint.framework</groupId>
+	<artifactId>ap_akka</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<name>Akka Utils</name>
+	<description>Aggrepoint Akka Utilities</description>
+	<url>https://github.com/yangjm/ap_akka</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Jiang Ming Yang</name>
+			<email>yangjm@gmail.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<url>https://github.com/yangjm/ap_akka</url>
+		<connection>scm:git:git://github.com/yangjm/ap_akka.git</connection>
+		<developerConnection>scm:git:git@github.com:yangjm/ap_akka.git</developerConnection>
+	</scm>
+
+	<properties>
+		<org.springframework-version>5.1.3.RELEASE</org.springframework-version>
+		<akka-version>2.5.11</akka-version>
+		<ap-version>1.0.6</ap-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.12</artifactId>
+			<version>${akka-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-cluster_2.12</artifactId>
+			<version>${akka-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-cluster-tools_2.12</artifactId>
+			<version>${akka-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aggrepoint.framework</groupId>
+			<artifactId>aputils</artifactId>
+			<version>${ap-version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>ap_akka</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
