@@ -19,8 +19,8 @@ Integrates Akka Actor with Spring Framework
 1. Create application.conf in the resources directory in project
 2. Configure akka.system.name and akka.conf in project's application.properties or application.yml. For example:
 ~~~~
-        akka.system.name=akkaapp
-        akka.conf=akka.remote.netty.tcp.port=5000;akka.cluster.seed-nodes=["akka.tcp://akkaapp@127.0.0.1:5000"];akka.cluster.roles=[app]
+    akka.system.name=akkaapp
+    akka.conf=akka.remote.netty.tcp.port=5000;akka.cluster.seed-nodes=["akka.tcp://akkaapp@127.0.0.1:5000"];akka.cluster.roles=[app]
 ~~~~
 # Command Line Parameters
 1. Use -port to specify AkkaSystem listen port, for example -port1234
