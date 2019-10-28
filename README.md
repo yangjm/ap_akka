@@ -6,12 +6,12 @@ Integrates Akka Actor with Spring Framework
 1. Add annotation @Component and @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) to actor classes
 2. Use @Import to import AkkaConfig.class. Make sure actor classes are in package scanned by Spring
 3. In the main() function of the application, before calling SpringApplication.run(), call AkkaConfig.processArgs() to process command line arguments
-
+~~~~
     public static void main(String[] args) {
         AkkaConfig.processArgs(args);
         SpringApplication.run(SchedulerApplication.class, args);
     }
-
+~~~~
 4. Inject ActorCreator to classes that need to create Akka actor. Use ActorCreator.create() to create container managed actor instance.
 5. ActorSystem is managed by Spring container, it can be injected by @Autowired
 
