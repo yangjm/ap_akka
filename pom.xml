@@ -6,7 +6,7 @@
 
 	<groupId>com.aggrepoint.framework</groupId>
 	<artifactId>ap_akka</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>Akka Utils</name>
@@ -35,7 +35,7 @@
 
 	<properties>
 		<org.springframework-version>5.1.3.RELEASE</org.springframework-version>
-		<akka-version>2.5.11</akka-version>
+		<akka-version>2.5.26</akka-version>
 		<ap-version>1.0.6</ap-version>
 	</properties>
 
@@ -48,19 +48,19 @@
 
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-actor_2.12</artifactId>
+			<artifactId>akka-actor_2.13</artifactId>
 			<version>${akka-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-cluster_2.12</artifactId>
+			<artifactId>akka-cluster_2.13</artifactId>
 			<version>${akka-version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-cluster-tools_2.12</artifactId>
+			<artifactId>akka-cluster-tools_2.13</artifactId>
 			<version>${akka-version}</version>
 		</dependency>
 
