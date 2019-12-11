@@ -89,6 +89,9 @@ public class ServiceActorRef {
 				logger.info("Service added: {}", actor.path());
 			break;
 		}
+
+		logger.info("Services status: {}", toString());
+
 		return ret;
 	}
 
@@ -103,8 +106,13 @@ public class ServiceActorRef {
 		if (r.size() == 0)
 			return false;
 
-		logger.info("Services removed: [{}]",
+		logger.info("Services being removed: [{}]",
 				r.stream().map(tw -> tw.getOne().path().toString()).collect(Collectors.joining(",")));
+
+		reachable.removeAll(r);
+		unreachable.removeAll(r);
+
+		logger.info("Services status: {}", toString());
 
 		return true;
 	}
@@ -116,11 +124,13 @@ public class ServiceActorRef {
 		if (un.size() == 0)
 			return false;
 
-		logger.info("Services unreachable: [{}]",
+		logger.info("Services become unreachable: [{}]",
 				un.stream().map(tw -> tw.getOne().path().toString()).collect(Collectors.joining(",")));
 
 		reachable.removeAll(un);
 		unreachable.addAll(un);
+
+		logger.info("Services status: {}", toString());
 		return true;
 	}
 
@@ -131,12 +141,15 @@ public class ServiceActorRef {
 		if (un.size() == 0)
 			return false;
 
-		logger.info("Services reachable: [{}]",
+		logger.info("Services become reachable: [{}]",
 				un.stream().map(tw -> tw.getOne().path().toString()).collect(Collectors.joining(",")));
 
 		unreachable.removeAll(un);
 		reachable.addAll(un);
 		sort();
+
+		logger.info("Services status: {}", toString());
+
 		return true;
 	}
 
